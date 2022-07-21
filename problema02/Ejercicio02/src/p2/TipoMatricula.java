@@ -5,6 +5,8 @@
  */
 package p2;
 
+import java.util.ArrayList;
+import p1.Matricula;
 import p1.MatriculaCampamento;
 import p1.MatriculaColegio;
 
@@ -13,37 +15,27 @@ import p1.MatriculaColegio;
  * @author reroes
  */
 public class TipoMatricula {
+
     private double promedioMatriculas;
-    private MatriculaCampamento campamento;
-    private MatriculaColegio colegio;
-    // private MatriculaEscuela escuela;
-    // private MatriculaJardin jardin;
-    // private MatriculaMaternal maternal;
-    // private MatriculaMaternal maternal2;
-    
-    public void establecerMatriculaCampamento(MatriculaCampamento c){
-        campamento = c;
+    private ArrayList<Matricula> matriculas;
+
+    public void establecerMatriculas(ArrayList<Matricula> m) {
+        matriculas = m;
     }
-    
-    public void establecerMatriculaColegio(MatriculaColegio c){
-        colegio = c;
+
+    public ArrayList<Matricula> obtenerMatriculas() {
+        return matriculas;
     }
-    
-    public MatriculaCampamento obtenerMatriculaCampamento(){
-        return campamento;
+
+    public void establecerPromedioMatriculas() {
+        double suma = 0;
+        for (int i = 0; i < obtenerMatriculas().size(); i++) {
+            suma = suma + obtenerMatriculas().get(i).obtenerMatricula();
+        }
+        promedioMatriculas = suma / obtenerMatriculas().size();
     }
-    
-    public MatriculaColegio obtenerMatriculaColegio(){
-        return colegio;
-    }
-    
-    public void establecerPromedioTarifas(){
-        promedioMatriculas = (obtenerMatriculaCampamento().obtenerTarifa() + 
-                obtenerMatriculaColegio().obtenerTarifa())/2;
-        
-    }
-    
-    public double obtenerPromedioTarifas(){
+
+    public double obtenerPromedioMatriculas() {
         return promedioMatriculas;
     }
 }

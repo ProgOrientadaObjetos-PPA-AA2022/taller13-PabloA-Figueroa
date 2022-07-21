@@ -9,9 +9,10 @@ package p1;
  *
  * @author reroes
  */
-public class MatriculaColegio {
+public class MatriculaColegio extends Matricula{
     private double tarifa;
     
+    @Override
     public void establecerTarifa(){
         // tarifa = costo deportes + costo folletos + 
         //          costo uniformes + costo laboratorios
