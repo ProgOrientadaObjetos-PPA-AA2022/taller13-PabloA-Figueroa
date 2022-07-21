@@ -18,7 +18,12 @@ public class MatriculaMaternal extends Matricula{
         tarifa = 50.2 + 40.2 + 80.2;
     }
         
-    public double obtenerTarifa(){
-        return tarifa;
+
+    @Override
+    public String toString() {
+
+        String cadena = String.format("Matricula Maternal: %.2f",
+                tarifa);
+        return cadena;
     }
 }

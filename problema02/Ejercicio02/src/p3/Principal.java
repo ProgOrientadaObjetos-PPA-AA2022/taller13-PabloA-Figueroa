@@ -22,7 +22,7 @@ public class Principal {
 
     public static void main(String[] args) {
         TipoMatricula tipos = new TipoMatricula();
-        ArrayList<Matricula> matcls = new ArrayList<Matricula>();
+        ArrayList<Matricula> matcls = new ArrayList<>();
 
         MatriculaCampamento mcamp = new MatriculaCampamento();
         mcamp.establecerTarifa();
@@ -36,16 +36,16 @@ public class Principal {
         mmaternal.establecerTarifa();
         MatriculaMaternal mmaternal2 = new MatriculaMaternal();
         mmaternal2.establecerTarifa();
+        
         matcls.add(mcamp);
         matcls.add(mcolegio);
         matcls.add(mescuela);
         matcls.add(mjardin);
         matcls.add(mmaternal);
         matcls.add(mmaternal2);
-
-        tipos.establecerMatriculaCampamento(mcamp);
-        tipos.establecerMatriculaColegio(mcolegio);
-        tipos.establecerPromedioTarifas();
+        
+        tipos.establecerMatriculas(matcls);      
+        tipos.establecerPromedioMatriculas();
         System.out.printf("%s\n", tipos);
     }
 }

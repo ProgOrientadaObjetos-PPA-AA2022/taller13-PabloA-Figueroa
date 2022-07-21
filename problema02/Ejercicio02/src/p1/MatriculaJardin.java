@@ -22,4 +22,11 @@ public class MatriculaJardin extends Matricula{
     public double obtenerTarifa(){
         return tarifa;
     }
+    @Override
+    public String toString() {
+
+        String cadena = String.format("Matricula Jardin: %.2f",
+                tarifa);
+        return cadena;
+    }
 }

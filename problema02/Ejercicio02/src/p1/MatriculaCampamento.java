@@ -18,7 +18,12 @@ public class MatriculaCampamento extends Matricula {
         tarifa = 100.2 + 30.2 + 90.2;
     }
         
-    public double obtenerTarifa(){
-        return tarifa;
+
+    @Override
+    public String toString() {
+
+        String cadena = String.format("Matricula Campamento: %.2f",
+                tarifa);
+        return cadena;
     }
 }
